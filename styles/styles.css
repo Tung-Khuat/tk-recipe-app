@@ -1,0 +1,50 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.recipe-layout {
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 100vh;
+}
+
+.recipe-box {
+  padding: 0.5rem;
+}
+
+.recipe-tag {
+  display: inline-block;
+  padding: 2px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 2px;
+  cursor: pointer;
+}
+
+.recipe-thumbnail{
+  max-width: 250px;
+}
+
+.header {
+  align-items: center;
+  background: white;
+  border-bottom: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  padding: .5rem;
+  position: sticky;
+  top: 0;
+}
+.header * {
+  margin: 0;
+}
