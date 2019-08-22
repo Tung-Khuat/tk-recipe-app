@@ -24,7 +24,10 @@ router.post('/', async (req, res) => {
   const recipe = new Recipe({
     name: req.body.name,
     ingredience: req.body.ingredience,
-    dateCreated: req.body.dateCreated
+    dateCreated: req.body.dateCreated,
+    steps: req.body.steps,
+    image: req.body.image,
+    tag: req.body.tag
   })
   try {
     const newRecipe = await recipe.save();

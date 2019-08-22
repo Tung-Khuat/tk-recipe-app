@@ -13,6 +13,16 @@ const recipeSchema = new mongoose.Schema({
     type: Date,
     required: true,
     default: Date.now
+  },
+  steps:{
+    type: Array,
+    required: false,
+  },
+  image:{
+    type: String,
+  },
+  tag:{
+    type: Array,
   }
 })
 
