@@ -1,6 +1,7 @@
 require('dotenv').config();
 
 const express = require('express');
+
 const app = express();
 const path = require('path');
 const mongoose = require('mongoose');
@@ -14,13 +15,15 @@ app.use(express.json());
 
 app.use(express.static(__dirname));
 
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE');
   next();
 });
 
 const recipesRouter = require('./controllers/controller-recipe');
+
 app.use('/api/recipe', recipesRouter);
 
 app.get('*', (req, res) => {
