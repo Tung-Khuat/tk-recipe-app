@@ -1,8 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import ThumbnailImageCrop from '../image_components/thumbnail-image-crop';
 
 export default function RecipeListItem(props) {
-  const { recipes, toggleFavAction, favourites } = props;
+  const {
+    recipes, toggleFavAction, favourites, deleteRecipe,
+  } = props;
 
   function renderTags(tags) {
     return tags.map((tag) => (
@@ -16,23 +19,22 @@ export default function RecipeListItem(props) {
         {
           recipe.image
           && (
-          <img
-            className="recipe-thumbnail"
-            src={recipe.image}
-            alt={`recipe ${recipe.name}`}
-          />
+          <ThumbnailImageCrop src={recipe.image} />
           )
         }
-        <div>{recipe.name}</div>
-        <section style={{ display: 'flex', justifyContent: 'space-between' }}>
-          <div>
-            {renderTags(recipe.tag)}
-          </div>
-          <button type="button" onClick={() => toggleFavAction(recipe)}>
-            {favourites.find((fav) => fav.id === recipe.id) ? 'Unfav' : 'Fav'}
-          </button>
-        </section>
+        <div className="text-wrap"><strong>{recipe.name}</strong></div>
       </Link>
+      <section style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <div>
+          {renderTags(recipe.tag)}
+        </div>
+        <button type="button" onClick={() => toggleFavAction(recipe)}>
+          {favourites.find((fav) => fav._id === recipe._id) ? 'Unfav' : 'Fav'}
+        </button>
+        <button type="button" onClick={() => deleteRecipe(recipe._id)}>
+            x
+        </button>
+      </section>
     </section>
   ));
 }
