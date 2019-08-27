@@ -1,3 +1,7 @@
+a, a:hover, a:focus {
+  text-decoration: none;
+  color: black;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -7,19 +11,53 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+button:focus {
+  outline: none;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.cropped {
+  width:  120px;
+  height: 120px;
+}
 
+.cover-cropped {
+  display: inline-block;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0 auto;
+}
+
+.contain-cropped {
+  display: inline-block;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 0 auto;
+ }
+.recipe-full-info-card {
+  width: 70%;
+  margin: 0 auto;
+}
 .recipe-layout {
   display: flex;
   flex-wrap: wrap;
   min-width: 100vh;
+  justify-content: center;
 }
 
 .recipe-box {
-  padding: 0.5rem;
+  width: 270px;
+  border-radius: 7px;
+  margin: 4px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.09);
+}
+.recipe-box:hover {
+  transform: scale(1.009);
 }
 
 .recipe-tag {
@@ -31,8 +69,25 @@ code {
   cursor: pointer;
 }
 
-.recipe-thumbnail{
+.recipe-thumbnail {
   max-width: 250px;
+}
+
+.recipe-info-image {
+  width: 325px;
+}
+
+.text-wrap {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.toggle-fav-icon {
+  cursor: pointer;
+  position: absolute;
+  color: white;
+  margin: 3px;
 }
 
 .header {
@@ -44,6 +99,7 @@ code {
   padding: .5rem;
   position: sticky;
   top: 0;
+  z-index: 50;
 }
 .header * {
   margin: 0;
