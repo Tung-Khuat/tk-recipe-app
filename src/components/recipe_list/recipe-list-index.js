@@ -3,7 +3,6 @@ import { Endpoints } from '../../endpoints';
 import { Store } from '../../store';
 import { fetchRecipeList, deleteRecipeById } from '../../actions/action-recipe';
 import RecipeListItem from './recipe-list-item';
-import RecipeUpload from '../recipe_upload/recipe-upload-index';
 
 function RecipeListIndex() {
   const { state, dispatch } = React.useContext(Store);
@@ -49,7 +48,6 @@ function RecipeListIndex() {
           {' '}
           {state.favourites.length}
         </div>
-        <RecipeUpload />
       </div>
       <section className="recipe-layout">
         <RecipeListItem {...props} />
