@@ -2,14 +2,10 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import ArrowBackRoundedIcon from '@material-ui/icons/ArrowBackRounded';
 import Grid from '@material-ui/core/Grid';
+import RecipeIngredience from './recipe-ingredience';
+import RecipeTags from '../recipe_list/recipe-tags';
 
 export default function RecipeFullInfoDisplay(recipe) {
-  const renderIngredience = (ingredience) => ingredience.map((ingredient) => (
-    <div>
-      {`${ingredient.amount || 'Some'} ${ingredient.unit || 'Amount'} - ${ingredient.name || ''} ${ingredient.preparation ? `(${ingredient.preparation})` : ''}`}
-    </div>
-  ));
-
   const renderSteps = (steps) => steps.map((step, index) => (
     <div>
       {`${index + 1} - ${step.description}`}
@@ -44,17 +40,20 @@ export default function RecipeFullInfoDisplay(recipe) {
           }
           <div className="recipe-info-title">
             <h1>{ recipe.name }</h1>
-            <p>{ recipe.tag && recipe.tag.map((tag) => <button className="recipe-tag">{tag}</button>) }</p>
+            {
+              recipe.tag
+              && <RecipeTags tagsArray={recipe.tag} />
+            }
             <p>{ recipe.description }</p>
           </div>
         </div>
       </div>
       <Grid container spacing={1}>
         <Grid item lg={6} sm={12}>
-          <div className="recipe-instructions">
-            <h3>Ingredience</h3>
-            <div>{recipe.ingredient && renderIngredience(recipe.ingredient)}</div>
-          </div>
+          {
+            recipe.ingredient
+            && <RecipeIngredience ingredienceArray={recipe.ingredient} />
+          }
         </Grid>
         <Grid item lg={6} sm={12}>
           <div className="recipe-instructions">

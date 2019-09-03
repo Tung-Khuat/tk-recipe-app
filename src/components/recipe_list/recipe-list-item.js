@@ -9,6 +9,7 @@ import {
 } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
 import ThumbnailImageCrop from '../image_components/thumbnail-image-crop';
+import RecipeTags from './recipe-tags';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -39,7 +40,7 @@ export default function RecipeListItem(props) {
       <div className="toggle-fav-icon" onClick={() => toggleFavAction(recipe)}>
         {favourites.find((fav) => fav._id === recipe._id) ? <Favorite /> : <FavoriteBorder />}
       </div>
-      <Link to={`/recipes/${recipe._id}`}>
+      <Link to={`/recipes/recipe-info/${recipe._id}`}>
         {
           recipe.image
           && (
@@ -49,9 +50,7 @@ export default function RecipeListItem(props) {
         <div className="text-wrap"><strong>{recipe.name}</strong></div>
       </Link>
       <section style={{ display: 'flex', justifyContent: 'space-between' }}>
-        <div>
-          {recipe.tag && renderTags(recipe.tag)}
-        </div>
+        <RecipeTags tagsArray={recipe.tag} />
         <IconButton aria-label="delete" className={classes.margin} onClick={() => deleteRecipe(recipe._id)}>
           <Delete />
         </IconButton>
