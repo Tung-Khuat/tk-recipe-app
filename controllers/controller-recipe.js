@@ -9,7 +9,7 @@ const Recipe = require('../models/model-recipe');
 router.get('/', async (req, res) => {
   try {
     const recipes = await Recipe.find();
-    res.json(recipes);
+    res.json(recipes.reverse());
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
