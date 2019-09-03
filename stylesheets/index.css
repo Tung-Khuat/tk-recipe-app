@@ -1,0 +1,272 @@
+/* line 1, ../sass/partials/_base.scss */
+a, a:hover, a:focus {
+  text-decoration: none;
+  color: black;
+}
+
+/* line 5, ../sass/partials/_base.scss */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* line 14, ../sass/partials/_base.scss */
+button:focus {
+  outline: none;
+}
+
+/* line 18, ../sass/partials/_base.scss */
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+/* line 23, ../sass/partials/_base.scss */
+input {
+  text-align: center;
+}
+
+/* line 1, ../sass/partials/_layout.scss */
+.cropped {
+  width: 120px;
+  height: 120px;
+}
+
+/* line 7, ../sass/partials/_layout.scss */
+.contain-cropped {
+  display: inline-block;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 0 auto;
+}
+
+/* line 15, ../sass/partials/_layout.scss */
+.cover-cropped {
+  display: inline-block;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0 auto;
+}
+
+/* line 23, ../sass/partials/_layout.scss */
+.dark-filter {
+  background-color: rgba(2, 27, 35, 0.79);
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  color: #fff;
+}
+
+/* line 32, ../sass/partials/_layout.scss */
+.header {
+  align-items: center;
+  background: white;
+  border-bottom: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  padding: .5rem;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+/* line 44, ../sass/partials/_layout.scss */
+.ingredience-container {
+  align-content: stretch;
+  flex-wrap: nowrap !important;
+}
+
+/* line 49, ../sass/partials/_layout.scss */
+.ingredience-item {
+  place-self: center;
+}
+/* line 51, ../sass/partials/_layout.scss */
+.ingredience-item input {
+  border: none !important;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* line 58, ../sass/partials/_layout.scss */
+.recipe-banner-background {
+  width: 100%;
+  height: 140%;
+  background: no-repeat;
+  background-position: center;
+  background-size: cover;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  opacity: 0.4;
+  z-index: -100;
+}
+
+/* line 70, ../sass/partials/_layout.scss */
+.recipe-banner-container {
+  width: 100%;
+  height: 80vh;
+  background: #355C7D;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #C06C84, #6C5B7B, #355C7D);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #c06c84, #6c5b7b, #355c7d);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-radius: 7px 7px 0 0;
+  overflow: hidden;
+  color: #fff;
+}
+
+/* line 81, ../sass/partials/_layout.scss */
+.recipe-banner-content {
+  width: 70%;
+  margin: 20px auto;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+
+/* line 89, ../sass/partials/_layout.scss */
+.recipe-box {
+  width: 270px;
+  border-radius: 7px;
+  margin: 4px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.09);
+}
+/* line 95, ../sass/partials/_layout.scss */
+.recipe-box:hover {
+  transform: scale(1.009);
+}
+
+/* line 100, ../sass/partials/_layout.scss */
+.recipe-full-info-card {
+  width: 70%;
+  margin: 20px auto;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.09);
+  overflow: hidden;
+}
+/* line 105, ../sass/partials/_layout.scss */
+.recipe-full-info-card input {
+  border: 1px solid #a9a9a9;
+  border-radius: 5px;
+  background: none;
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+/* line 115, ../sass/partials/_layout.scss */
+.recipe-info-cirlce-image-container {
+  width: 250px;
+  height: 250px;
+  position: relative;
+  font-size: 1.25rem;
+  align-items: center;
+  flex-shrink: 0;
+  user-select: none;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  justify-content: center;
+  overflow: hidden;
+  margin: 0 auto;
+}
+/* line 128, ../sass/partials/_layout.scss */
+.recipe-info-cirlce-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  text-align: center;
+}
+
+/* line 136, ../sass/partials/_layout.scss */
+.recipe-info-title {
+  text-align: center;
+  margin-top: 5px;
+}
+
+/* line 141, ../sass/partials/_layout.scss */
+.recipe-instructions {
+  padding: 35px;
+}
+/* line 143, ../sass/partials/_layout.scss */
+.recipe-instructions .ingredience-item {
+  background-color: #fff0f09c;
+  margin: 2px;
+  border-radius: 5px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+/* line 150, ../sass/partials/_layout.scss */
+.recipe-instructions .ingredience-item:hover {
+  overflow: scroll;
+  text-overflow: clip;
+}
+/* line 155, ../sass/partials/_layout.scss */
+.recipe-instructions .MuiGrid-container {
+  margin-bottom: 3px;
+}
+
+/* line 160, ../sass/partials/_layout.scss */
+.recipe-info-image {
+  width: 325px;
+}
+
+/* line 164, ../sass/partials/_layout.scss */
+.recipe-layout {
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 100vh;
+  justify-content: center;
+}
+
+/* line 171, ../sass/partials/_layout.scss */
+.recipe-tag {
+  display: inline-block;
+  padding: 2px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 2px;
+  cursor: pointer;
+}
+
+/* line 180, ../sass/partials/_layout.scss */
+.recipe-thumbnail {
+  max-width: 250px;
+}
+
+/* line 184, ../sass/partials/_layout.scss */
+.max-width {
+  width: 100%;
+}
+
+/* line 188, ../sass/partials/_layout.scss */
+.tags-container input {
+  border: none;
+  width: auto;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* line 195, ../sass/partials/_layout.scss */
+.text-wrap {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* line 200, ../sass/partials/_layout.scss */
+.text-center {
+  text-align: center;
+}
+
+/* line 204, ../sass/partials/_layout.scss */
+.toggle-fav-icon {
+  cursor: pointer;
+  position: absolute;
+  color: white;
+  margin: 3px;
+}
