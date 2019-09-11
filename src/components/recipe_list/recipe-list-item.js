@@ -34,27 +34,33 @@ export default function RecipeListItem(props) {
       <button className="recipe-tag">{tag}</button>
     ));
   }
-
-  return recipes.map((recipe) => (
-    <section className="recipe-box" key={recipe._id}>
-      <div className="toggle-fav-icon" onClick={() => toggleFavAction(recipe)}>
-        {favourites.find((fav) => fav._id === recipe._id) ? <Favorite /> : <FavoriteBorder />}
-      </div>
-      <Link to={`/recipes/recipe-info/${recipe._id}`}>
-        {
-          recipe.image
-          && (
-          <ThumbnailImageCrop src={recipe.image} customClass="cover-cropped" />
-          )
-        }
-        <div className="text-wrap"><strong>{recipe.name}</strong></div>
-      </Link>
-      <section style={{ display: 'flex', justifyContent: 'space-between' }}>
-        <RecipeTags tagsArray={recipe.tag} />
-        <IconButton aria-label="delete" className={classes.margin} onClick={() => deleteRecipe(recipe._id)}>
-          <Delete />
-        </IconButton>
-      </section>
-    </section>
-  ));
+  return (
+    <>
+      {
+        recipes.length > 0
+        && recipes.map((recipe) => (
+          <section className="recipe-box" key={recipe._id}>
+            <div className="toggle-fav-icon" onClick={() => toggleFavAction(recipe)}>
+              {favourites.find((fav) => fav._id === recipe._id) ? <Favorite /> : <FavoriteBorder />}
+            </div>
+            <Link to={`/recipes/recipe-info/${recipe._id}`}>
+              {
+                recipe.image
+                && (
+                <ThumbnailImageCrop src={recipe.image} customClass="cover-cropped" />
+                )
+              }
+              <div className="text-wrap"><strong>{recipe.name}</strong></div>
+            </Link>
+            <section style={{ display: 'flex', justifyContent: 'space-between' }}>
+              <RecipeTags tagsArray={recipe.tag} />
+              <IconButton aria-label="delete" className={classes.margin} onClick={() => deleteRecipe(recipe._id)}>
+                <Delete />
+              </IconButton>
+            </section>
+          </section>
+        ))
+      }
+    </>
+  );
 }

@@ -1,12 +1,11 @@
 import React from 'react';
 import { postNewRecipe } from '../../actions/action-recipe';
 import { Store } from '../../store';
-import { recipeSampleData } from '../../actions/recipe.js';
 import RecipeEditModeDisplay from './recipe-edit-mode-display';
 
 const displayPlaceholderData = {
-  name: 'New Recipe Title',
-  description: 'Recipe description',
+  name: '',
+  description: '',
   tag: [
     '',
   ],
@@ -22,8 +21,12 @@ const displayPlaceholderData = {
 export default function RecipeUploadIndex() {
   const { state, dispatch } = React.useContext(Store);
 
+  function successHandler() {
+    alert('Successfully created a new recipe');
+  }
+
   function uploadNewRecipe(recipeObject) {
-    postNewRecipe(dispatch, recipeObject);
+    postNewRecipe(dispatch, recipeObject, successHandler);
   }
 
   return (

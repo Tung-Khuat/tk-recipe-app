@@ -23,20 +23,19 @@ export async function fetchRecipeItemById(dispatch, id) {
   );
 }
 
-export async function postNewRecipe(dispatch, newRecipeObject) {
+export async function postNewRecipe(dispatch, newRecipeObject, successHandler) {
   const request = axios({
     method: 'post',
     url: Endpoints.recipeList(),
     data: newRecipeObject,
   });
-  const response = await request;
-
-  return dispatch(
-    {
-      type: ActionType.FETCH_RECIPE_LIST,
-      payload: response.data,
-    },
-  );
+  try {
+    const response = await request;
+    fetchRecipeList(dispatch);
+    successHandler && successHandler();
+  } catch (error) {
+    window.alert(error);
+  }
 }
 
 export async function deleteRecipeById(dispatch, id, successHandler) {

@@ -36,6 +36,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebPackPlugin({
+      inject: false,
       template: './dist/index.html',
       filename: './index.html',
     }),

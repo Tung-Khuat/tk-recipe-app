@@ -33,6 +33,7 @@ export default function RecipeIngredience(props) {
                   newArray[itemIndex][type] = e.target.value;
                   updateIngredienceArrayMethod(newArray);
                 }}
+                placeholder={`${type}`}
                 type="text"
               />
             )

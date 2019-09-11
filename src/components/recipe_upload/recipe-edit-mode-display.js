@@ -49,6 +49,7 @@ export default function RecipeEditModeDisplay(recipe) {
       {' '}
       <input
         value={stepsArray[index].description}
+        placeholder="Enter a step"
         onChange={(e) => {
           const newArray = [...stepsArray];
           newArray[index].description = e.target.value;
@@ -137,11 +138,11 @@ export default function RecipeEditModeDisplay(recipe) {
             </Fade>
           </Modal>
           <div className="recipe-info-title">
-            <h1><input value={nameValue} onChange={(e) => { updateNameValue(e.target.value); }} type="text" /></h1>
+            <h1><input value={nameValue} placeholder="Enter Recipe Name" onChange={(e) => { updateNameValue(e.target.value); }} type="text" /></h1>
 
             <RecipeTags tagsArray={tagsArray} isEditModeActive updateTagsArrayMethod={updateTagsArray} />
 
-            <p><input value={descriptionValue} onChange={(e) => { updateDescriptionValue(e.target.value); }} type="text" /></p>
+            <p><input value={descriptionValue} placeholder="Enter Recipe Description" onChange={(e) => { updateDescriptionValue(e.target.value); }} type="text" /></p>
           </div>
         </div>
       </div>

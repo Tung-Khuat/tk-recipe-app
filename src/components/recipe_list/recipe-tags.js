@@ -29,6 +29,7 @@ export default function RecipeTags(props) {
               label={(
                 <input
                   value={tagLabel}
+                  placeholder="Enter a tag"
                   onChange={(e) => {
                     const newArray = [...tagsArray];
                     newArray[index] = e.target.value;

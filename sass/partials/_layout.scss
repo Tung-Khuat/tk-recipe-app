@@ -76,6 +76,13 @@
   border-radius: 7px 7px 0 0;
   overflow: hidden;
   color: #fff;
+  h2 {
+    color: #fff;
+    opacity: 0.8;
+    &:hover {
+      opacity: 1;
+    }
+  }
 }
 
 .recipe-banner-content {
@@ -185,11 +192,16 @@
   width: 100%;
 }
 
-.tags-container input {
-  border: none;
-  width: auto;
-  margin: 0 auto;
-  text-align: center;
+.tags-container {
+  input {
+    border: none;
+    width: auto;
+    margin: 0 auto;
+    text-align: center;
+  }
+  div {
+    margin: 3px;
+  }
 }
 
 .text-wrap {
@@ -197,6 +209,7 @@
   overflow: hidden;
   white-space: nowrap;
 }
+
 .text-center {
   text-align: center;
 }
