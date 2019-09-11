@@ -140,24 +140,84 @@ input {
 /* line 96, ../sass/partials/_layout.scss */
 .recipe-box {
   width: 270px;
+  height: 270px;
+  position: relative;
   border-radius: 7px;
   margin: 4px;
   overflow: hidden;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.09);
 }
-/* line 102, ../sass/partials/_layout.scss */
+/* line 103, ../sass/partials/_layout.scss */
 .recipe-box:hover {
   transform: scale(1.009);
 }
 
-/* line 107, ../sass/partials/_layout.scss */
+/* line 108, ../sass/partials/_layout.scss */
+.recipe-box-info {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  padding: 15px;
+  font-size: 1.25rem;
+  background-color: #141414;
+  color: #fff;
+  opacity: 0.5;
+}
+/* line 15, ../sass/partials/_mixins.scss */
+.recipe-box-info a {
+  color: #fff;
+}
+/* line 111, ../sass/partials/_layout.scss */
+.recipe-box-info .recipe-box-title {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* line 116, ../sass/partials/_layout.scss */
+.recipe-box-detailed-info {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  padding: 15px;
+  font-size: 1.25rem;
+  background-color: #141414;
+  color: #fff;
+  opacity: 1;
+}
+/* line 15, ../sass/partials/_mixins.scss */
+.recipe-box-detailed-info a {
+  color: #fff;
+}
+
+/* line 121, ../sass/partials/_layout.scss */
+.recipe-box-title {
+  font-weight: bolder;
+  color: #fff;
+}
+
+/* line 126, ../sass/partials/_layout.scss */
+.recipe-box-delete-icon {
+  position: absolute;
+  cursor: pointer;
+  padding: 5px;
+  top: 0;
+  right: 0;
+  color: #fff;
+}
+/* line 23, ../sass/partials/_mixins.scss */
+.recipe-box-delete-icon:hover {
+  transform: scale(1.2);
+}
+
+/* line 134, ../sass/partials/_layout.scss */
 .recipe-full-info-card {
   width: 70%;
   margin: 20px auto;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.09);
   overflow: hidden;
 }
-/* line 112, ../sass/partials/_layout.scss */
+/* line 139, ../sass/partials/_layout.scss */
 .recipe-full-info-card input {
   border: 1px solid #a9a9a9;
   border-radius: 5px;
@@ -167,7 +227,7 @@ input {
   margin-bottom: 5px;
 }
 
-/* line 122, ../sass/partials/_layout.scss */
+/* line 149, ../sass/partials/_layout.scss */
 .recipe-info-cirlce-image-container {
   width: 250px;
   height: 250px;
@@ -182,7 +242,7 @@ input {
   overflow: hidden;
   margin: 0 auto;
 }
-/* line 135, ../sass/partials/_layout.scss */
+/* line 162, ../sass/partials/_layout.scss */
 .recipe-info-cirlce-image-container img {
   width: 100%;
   height: 100%;
@@ -190,17 +250,17 @@ input {
   text-align: center;
 }
 
-/* line 143, ../sass/partials/_layout.scss */
+/* line 170, ../sass/partials/_layout.scss */
 .recipe-info-title {
   text-align: center;
   margin-top: 5px;
 }
 
-/* line 148, ../sass/partials/_layout.scss */
+/* line 175, ../sass/partials/_layout.scss */
 .recipe-instructions {
   padding: 35px;
 }
-/* line 150, ../sass/partials/_layout.scss */
+/* line 177, ../sass/partials/_layout.scss */
 .recipe-instructions .ingredience-item {
   background-color: #fff0f09c;
   margin: 2px;
@@ -209,22 +269,22 @@ input {
   overflow: hidden;
   white-space: nowrap;
 }
-/* line 157, ../sass/partials/_layout.scss */
+/* line 184, ../sass/partials/_layout.scss */
 .recipe-instructions .ingredience-item:hover {
   overflow: scroll;
   text-overflow: clip;
 }
-/* line 162, ../sass/partials/_layout.scss */
+/* line 189, ../sass/partials/_layout.scss */
 .recipe-instructions .MuiGrid-container {
   margin-bottom: 3px;
 }
 
-/* line 167, ../sass/partials/_layout.scss */
+/* line 194, ../sass/partials/_layout.scss */
 .recipe-info-image {
   width: 325px;
 }
 
-/* line 171, ../sass/partials/_layout.scss */
+/* line 198, ../sass/partials/_layout.scss */
 .recipe-layout {
   display: flex;
   flex-wrap: wrap;
@@ -232,7 +292,7 @@ input {
   justify-content: center;
 }
 
-/* line 178, ../sass/partials/_layout.scss */
+/* line 205, ../sass/partials/_layout.scss */
 .recipe-tag {
   display: inline-block;
   padding: 2px;
@@ -242,44 +302,42 @@ input {
   cursor: pointer;
 }
 
-/* line 187, ../sass/partials/_layout.scss */
+/* line 214, ../sass/partials/_layout.scss */
 .recipe-thumbnail {
   max-width: 250px;
 }
 
-/* line 191, ../sass/partials/_layout.scss */
+/* line 218, ../sass/partials/_layout.scss */
 .max-width {
   width: 100%;
 }
 
-/* line 196, ../sass/partials/_layout.scss */
+/* line 223, ../sass/partials/_layout.scss */
 .tags-container input {
   border: none;
   width: auto;
   margin: 0 auto;
   text-align: center;
 }
-/* line 202, ../sass/partials/_layout.scss */
+/* line 229, ../sass/partials/_layout.scss */
 .tags-container div {
   margin: 3px;
 }
 
-/* line 207, ../sass/partials/_layout.scss */
-.text-wrap {
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-/* line 213, ../sass/partials/_layout.scss */
+/* line 234, ../sass/partials/_layout.scss */
 .text-center {
   text-align: center;
 }
 
-/* line 217, ../sass/partials/_layout.scss */
+/* line 238, ../sass/partials/_layout.scss */
 .toggle-fav-icon {
   cursor: pointer;
+  padding: 5px;
   position: absolute;
   color: white;
   margin: 3px;
+}
+/* line 23, ../sass/partials/_mixins.scss */
+.toggle-fav-icon:hover {
+  transform: scale(1.2);
 }

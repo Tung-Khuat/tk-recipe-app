@@ -94,7 +94,8 @@
 }
 
 .recipe-box {
-  width: 270px;
+  @include recipe-box-size;
+  position: relative;
   border-radius: 7px;
   margin: 4px;
   overflow: hidden;
@@ -102,6 +103,32 @@
   &:hover {
     transform: scale(1.009);
   }
+}
+
+.recipe-box-info {
+  @include base-recipe-box-title;
+  opacity: 0.5;
+  .recipe-box-title {
+    @include text-wrap-ellipsis;
+  }
+}
+
+.recipe-box-detailed-info {
+  @include base-recipe-box-title;
+  opacity: 1;
+}
+
+.recipe-box-title {
+  font-weight: bolder;
+  color: #fff;
+}
+
+.recipe-box-delete-icon {
+  position: absolute;
+  @include standard-clickable-icon;
+  top: 0;
+  right: 0;
+  color: #fff;
 }
 
 .recipe-full-info-card {
@@ -204,18 +231,12 @@
   }
 }
 
-.text-wrap {
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-}
-
 .text-center {
   text-align: center;
 }
 
 .toggle-fav-icon {
-  cursor: pointer;
+  @include standard-clickable-icon;
   position: absolute;
   color: white;
   margin: 3px;
