@@ -3,6 +3,7 @@ import { Endpoints } from '../../endpoints';
 import { Store } from '../../store';
 import { fetchRecipeList, deleteRecipeById } from '../../actions/action-recipe';
 import RecipeListItem from './recipe-list-item';
+import RecipePanel from '../navigation/recipe-panel';
 
 function RecipeListIndex() {
   const { state, dispatch } = React.useContext(Store);
@@ -41,14 +42,7 @@ function RecipeListIndex() {
 
   return (
     <>
-      <div className="header">
-        <h1>My recipes</h1>
-        <div>
-          Favourite(s)
-          {' '}
-          {state.favourites.length}
-        </div>
-      </div>
+      <RecipePanel favs={state.favourites} />
       <section className="recipe-layout">
         <RecipeListItem {...props} />
       </section>
