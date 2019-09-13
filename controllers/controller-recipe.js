@@ -9,7 +9,7 @@ const Recipe = require('../models/model-recipe');
 router.get('/', async (req, res) => {
   try {
     const recipes = await Recipe.find();
-    res.json(recipes);
+    res.json(recipes.reverse());
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
@@ -41,25 +41,36 @@ router.post('/', async (req, res) => {
 
 // Send PATCH request to /recipes/:id to UPDATE a recipe
 router.patch('/:id', getRecipeById, async (req, res) => {
-  if (req.body.name == null) {
+  if (req.body.name !== null) {
     res.recipe.name = req.body.name;
   }
-  if (req.body.ingredient == null) {
+  if (req.body.ingredient !== null) {
     res.recipe.ingredient = req.body.ingredient;
   }
-  if (req.body.step == null) {
+  if (req.body.step !== null) {
     res.recipe.step = req.body.step;
   }
-  if (req.body.image == null) {
+  if (req.body.image !== null) {
     res.recipe.image = req.body.image;
   }
-  if (req.body.tag == null) {
+  if (req.body.tag !== null) {
     res.recipe.tag = req.body.tag;
   }
-  if (req.body.description == null) {
+  if (req.body.description !== null) {
     res.recipe.description = req.body.description;
   }
   try {
+    const newRecipe = await res.recipe.save();
+    res.json(newRecipe);
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+});
+
+// Send PUT request to /recipes/:id to UPDATE a recipe
+router.put('/:id', getRecipeById, async (req, res) => {
+  try {
+    res.recipe = req.body;
     const newRecipe = await res.recipe.save();
     res.json(newRecipe);
   } catch (error) {

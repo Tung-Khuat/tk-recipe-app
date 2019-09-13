@@ -1,0 +1,31 @@
+@mixin text-wrap-ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@mixin base-recipe-box-title {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  padding: 15px;
+  font-size: 1.25rem;
+  background-color: #141414;
+  color: #fff;
+  a {
+    color: #fff;
+  }
+}
+
+@mixin standard-clickable-icon {
+  cursor: pointer;
+  padding: 5px;
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
+@mixin recipe-box-size {
+  width: 270px;
+  height: 270px;
+}
