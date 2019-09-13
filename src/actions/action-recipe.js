@@ -38,6 +38,21 @@ export async function postNewRecipe(dispatch, newRecipeObject, successHandler) {
   }
 }
 
+export async function editRecipeWithId(dispatch, id, newRecipeObject, successHandler) {
+  const request = axios({
+    method: 'patch',
+    url: Endpoints.recipeById(id),
+    data: newRecipeObject,
+  });
+  try {
+    const response = await request;
+    fetchRecipeList(dispatch);
+    successHandler && successHandler();
+  } catch (error) {
+    window.alert(error);
+  }
+}
+
 export async function deleteRecipeById(dispatch, id, successHandler) {
   const confirmDelete = confirm('Are you sure you want to delete this recipe?');
   if (confirmDelete) {

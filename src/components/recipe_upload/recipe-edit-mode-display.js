@@ -69,8 +69,19 @@ export default function RecipeEditModeDisplay(recipe) {
       tag: tagsArray,
       ingredient: ingredienceArray,
     };
-    console.log(newRecipeObject);
     recipe.uploadNewRecipeMethod(newRecipeObject);
+  }
+
+  function handleRecipeEdit() {
+    const newRecipeObject = {
+      name: nameValue,
+      image: imgUrl,
+      description: descriptionValue,
+      step: stepsArray,
+      tag: tagsArray,
+      ingredient: ingredienceArray,
+    };
+    recipe.editCurrentRecipeMethod(newRecipeObject, recipe.toggleEditMode(false));
   }
 
   function handleOnClickAddSteps() {
@@ -163,9 +174,22 @@ export default function RecipeEditModeDisplay(recipe) {
           </div>
         </Grid>
       </Grid>
-      <Button className="max-width" variant="contained" component="span" onClick={handleUploadSubmit}>
-         Upload
-      </Button>
+      {
+        recipe.Id
+        && (
+        <Button className="max-width" variant="contained" component="span" onClick={handleRecipeEdit}>
+           Done
+        </Button>
+        )
+      }
+      {
+        !recipe.Id
+        && (
+        <Button className="max-width" variant="contained" component="span" onClick={handleUploadSubmit}>
+           Upload
+        </Button>
+        )
+      }
     </section>
   );
 }
