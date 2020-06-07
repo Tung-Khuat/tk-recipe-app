@@ -6,7 +6,7 @@ export const Store = React.createContext();
 const initialState = {
   recipes: [],
   currentRecipeInfo: null,
-  favourites: [],
+  favorites: [],
 };
 
 function reducer(state, action) {
@@ -28,12 +28,12 @@ function reducer(state, action) {
     case 'ADD_FAV':
       return {
         ...state,
-        favourites: [...state.favourites, action.payload],
+        favorites: [...state.favorites, action.payload],
       };
     case 'REMOVE_FAV':
       return {
         ...state,
-        favourites: action.payload,
+        favorites: action.payload,
       };
     default:
       return state;

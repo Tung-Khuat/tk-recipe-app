@@ -12,7 +12,7 @@ function RecipePanel(props) {
       <div>
         <Favorite />
         {' '}
-        {props.favs.length}
+        { props.favs && props.favs.length}
       </div>
     </div>
   );

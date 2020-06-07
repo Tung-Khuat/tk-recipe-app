@@ -1,5 +1,4 @@
 import React from 'react';
-import { Endpoints } from '../../endpoints';
 import { Store } from '../../store';
 import { fetchRecipeList, deleteRecipeById } from '../../actions/action-recipe';
 import RecipeListItem from './recipe-list-item';
@@ -13,16 +12,16 @@ function RecipeListIndex() {
   });
 
   const toggleFavAction = (recipe) => {
-    const recipeInFavourites = state.favourites.includes(recipe);
+    const recipeInFavorites = state.favorites.includes(recipe);
     let dispatchObj = {
       type: 'ADD_FAV',
       payload: recipe,
     };
-    if (recipeInFavourites) {
-      const favouritesWithoutRecipe = state.favourites.filter((fav) => fav._id !== recipe._id);
+    if (recipeInFavorites) {
+      const favoritesWithoutRecipe = state.favorites.filter((fav) => fav._id !== recipe._id);
       dispatchObj = {
         type: 'REMOVE_FAV',
-        payload: favouritesWithoutRecipe,
+        payload: favoritesWithoutRecipe,
       };
     }
     return dispatch(dispatchObj);
@@ -36,13 +35,13 @@ function RecipeListIndex() {
   const props = {
     recipes: state.recipes,
     toggleFavAction,
-    favourites: state.favourites,
+    favorites: state.favorites,
     deleteRecipe,
   };
 
   return (
     <>
-      <RecipePanel favs={state.favourites} />
+      <RecipePanel favs={state.favorites} />
       <section className="recipe-layout">
         <RecipeListItem {...props} />
       </section>
