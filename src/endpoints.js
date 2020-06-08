@@ -1,4 +1,4 @@
-const ROOT_URL = "http://localhost:3002/api"
+const ROOT_URL = "http://13.49.72.3:3000/api"
 
 export const Endpoints = {
   /*

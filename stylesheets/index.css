@@ -106,8 +106,8 @@ input {
 
 /* line 70, ../sass/partials/_layout.scss */
 .recipe-banner-container {
-  position: relative;
   width: 100%;
+  height: 80vh;
   background: #355C7D;
   /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #C06C84, #6C5B7B, #355C7D);

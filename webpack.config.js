@@ -9,6 +9,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '/dist/',
     filename: '[name].bundle.js',
   },
   module: {
@@ -76,7 +77,7 @@ module.exports = {
   plugins: [
     new HtmlWebPackPlugin({
       inject: false,
-      template: './index.html',
+      template: './src/index-template.html',
       filename: './index.html',
     }),
   ],

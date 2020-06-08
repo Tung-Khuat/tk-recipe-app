@@ -1,5 +1,5 @@
-# TK-RecipeApp
-
+# TK-React-Clock-and-Weather-App
 
 ## Demo
-[Live DEMO] Coming soon
+[Live DEMO](http://13.49.72.3:3000/)
+
